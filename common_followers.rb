@@ -108,11 +108,11 @@ if __FILE__ == $0
     puts "  common_followers.rb username1 username2 [-p] [-m]"
     exit 1
   end
+  
   user_check(usernames)
   result = common_followers(usernames[0], usernames[1])
   puts 'COMMON FOLLOWERS'
   puts result.to_a.join("\n")
-
 end
 
 
