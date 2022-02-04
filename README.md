@@ -1,5 +1,7 @@
 # github_followers
-Command line utility finds common followers in github
+Ruby command line utility finds common followers in github
+
+Find more about ruby at https://www.ruby-lang.org/en/documentation/installation/
 
 Requires octokit gem, install, e.g. with
 
@@ -7,8 +9,8 @@ Requires octokit gem, install, e.g. with
 gem install octokit
 ```
   
-Usage
+Usage (Linux/Unix)
 
-```common_followers username1 username2```
+```common_followers.rb username1 username2```
 
 
