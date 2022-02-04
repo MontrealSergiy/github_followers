@@ -1,15 +1,13 @@
 #!/usr/bin/env ruby
 
-# (c) USERUNDETECTED 2022
-# a githup api cli utility
-
-
 require "octokit"
 require "set"
 
 
-AUTH_TOKEN = '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'
+AUTH_TOKEN = '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'
+
 PER_PAGE = 100 # maximize the page
+
 TRIES = 3 # retry to counter network/rate issues
 
 
@@ -52,6 +50,7 @@ def get_page(user, page, tries)
       get_page(user, page, tries - 1)
     else
       STDERR.puts "ERROR, TERMINATING \n\n #{e.message}"
+      exit 1
     end
   end
 end
@@ -109,7 +108,7 @@ if __FILE__ == $0
     puts "  common_followers.rb username1 username2 [-p] [-m]"
     exit 1
   end
-
+  user_check(usernames)
   result = common_followers(usernames[0], usernames[1])
   puts 'COMMON FOLLOWERS'
   puts result.to_a.join("\n")
